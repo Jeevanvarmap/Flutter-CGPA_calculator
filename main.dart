@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vitdayz/home.dart';
+import 'package:CGPA.dart';
 
 void main() {
   runApp(MyApp());
