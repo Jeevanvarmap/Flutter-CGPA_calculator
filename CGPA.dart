@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:admob_flutter/admob_flutter.dart';
-import 'package:vitdayz/Services_/AdmobService.dart';
 
 class CGPA extends StatefulWidget {
   @override
@@ -9,7 +6,6 @@ class CGPA extends StatefulWidget {
 }
 
 class _CGPAState extends State<CGPA> {
-  final ams = AdMobService();
   final TextEditingController g1 = TextEditingController();
   final TextEditingController g2 = TextEditingController();
   final TextEditingController g3 = TextEditingController();
@@ -26,12 +22,6 @@ class _CGPAState extends State<CGPA> {
   final TextEditingController c6 = TextEditingController();
   final TextEditingController c7 = TextEditingController();
   final TextEditingController c8 = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    Admob.initialize(ams.getAdMobAppId());
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +51,7 @@ class _CGPAState extends State<CGPA> {
             Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.black, //                   <--- border color
+                  color: Colors.black,
                   width: 3.0,
                 ),
               ),
@@ -909,10 +899,6 @@ class _CGPAState extends State<CGPA> {
                       )),
             ),
             SizedBox(height:15.0),
-            AdmobBanner(
-                    adUnitId: ams.getBannerAdId(),
-                    adSize: AdmobBannerSize.FULL_BANNER,
-                  ),
           ]),
         ),
       ),
